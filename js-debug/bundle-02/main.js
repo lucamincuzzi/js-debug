@@ -11,17 +11,21 @@
 
 
 // ESERCIZIO 1
-function checkAge() {
-    const myAge = 32;
-    const message = '';
-
-    if (myAge < 18) {
-        message = `Sei troppo giovane! Hai ${myAge} anni!`;
+//Il primo errore è logico: la funzione non accetta parametri in ingresso, di cui necessita per eseguire il controllo al suo interno
+//Il secondo errore è logico: la variabile dell'età deve esistere al di fuori della funzione per poter entrare in ingresso
+//Il terzo errore è logico: la variabile di risultato message è inizializzata con const, pertanto non sarà possibile cambiarne il contenuto a seguito del controllo; è necessario let
+//Il quarto errore è logico: la funzione inizializza e cambia il valore della variabile risultato ma non la restituisce
+const myAge = 32;
+console.log("Esrcizio 1:", checkAge(myAge));
+function checkAge(age) {
+    let message = '';
+    if (age < 18) {
+        message = `Sei troppo giovane! Hai ${age} anni!`;
     } else {
         message = 'Hai più di 18 anni!';
     }
+    return message;
 }
-checkAge();
 
 // ESERCIZIO 2
 function printColorsNumber() {
